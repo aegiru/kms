@@ -1,8 +1,8 @@
 ---
 k3s_control_node: true
 k3s_server:
-  cluster-cidr: "30.0.69.0/24"
-  service-cidr: "30.0.96.0/24"
+  cluster-cidr: "10.42.0.0/16"
+  service-cidr: "10.43.0.0/16"
   disable: ["flannel", "local-storage", "metrics-server", "servicelb", "traefik"]
   disable-cloud-controller: true
   disable-kube-proxy: true
@@ -24,5 +24,5 @@ k3s_server:
   pause-image: registry.k8s.io/pause:3.9
   secrets-encryption: true
   tls-san:
-    - "30.0.100.100"
+    - "10.41.0.100"
   write-kubeconfig-mode: "644"
