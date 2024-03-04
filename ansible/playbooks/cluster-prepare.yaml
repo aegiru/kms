@@ -15,7 +15,7 @@
       block:
         - name: Locale | Set timezone
           community.general.timezone:
-            name: "Europe/Warsaw"
+            name: "Europe/Amsterdam"
 
     - name: Packages
       block:
