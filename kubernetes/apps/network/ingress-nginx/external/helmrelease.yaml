@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
@@ -19,7 +20,7 @@ spec:
   upgrade:
     cleanupOnFail: true
     remediation:
-      retries: 3
+      retries: 6
   uninstall:
     keepHistory: false
   dependsOn:
@@ -32,7 +33,8 @@ spec:
       service:
         annotations:
           external-dns.alpha.kubernetes.io/hostname: "external.${SECRET_DOMAIN}"
-          io.cilium/lb-ipam-ips: "30.0.1.103"
+          io.cilium/lb-ipam-ips: "10.43.0.103"
+          lbipam.cilium.io/sharing-key: "3333"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: external
