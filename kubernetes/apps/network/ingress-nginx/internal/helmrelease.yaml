@@ -16,7 +16,7 @@ spec:
         namespace: flux-system
   install:
     remediation:
-      retries: 5
+      retries: 3
   upgrade:
     cleanupOnFail: true
     remediation:
@@ -29,7 +29,7 @@ spec:
       replicaCount: 1
       service:
         annotations:
-          io.cilium/lb-ipam-ips: "10.43.0.101"
+          io.cilium/lb-ipam-ips: "30.0.1.101"
         externalTrafficPolicy: Cluster
       ingressClassResource:
         name: internal

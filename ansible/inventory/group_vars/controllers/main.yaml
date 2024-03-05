@@ -24,5 +24,5 @@ k3s_server:
   pause-image: registry.k8s.io/pause:3.9
   secrets-encryption: true
   tls-san:
-    - "10.43.0.100"
+    - "30.0.1.100"
   write-kubeconfig-mode: "644"
