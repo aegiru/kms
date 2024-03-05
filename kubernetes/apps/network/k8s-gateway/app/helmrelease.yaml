@@ -19,7 +19,7 @@ spec:
   upgrade:
     cleanupOnFail: true
     remediation:
-      retries: 3
+      retries: 6
   uninstall:
     keepHistory: false
   values:
@@ -31,4 +31,5 @@ spec:
       port: 53
       annotations:
         io.cilium/lb-ipam-ips: "10.43.0.102"
+        lbipam.cilium.io/sharing-key: "1111"
       externalTrafficPolicy: Cluster
