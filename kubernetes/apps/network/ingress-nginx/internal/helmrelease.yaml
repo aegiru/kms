@@ -23,6 +23,8 @@ spec:
       retries: 6
   uninstall:
     keepHistory: false
+  externalIPs:
+    - 10.44.0.11
   values:
     fullnameOverride: ingress-nginx-internal
     controller:
