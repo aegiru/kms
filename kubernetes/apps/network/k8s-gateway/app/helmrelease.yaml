@@ -1,4 +1,5 @@
 ---
+# yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/helm.toolkit.fluxcd.io/helmrelease_v2beta2.json
 apiVersion: helm.toolkit.fluxcd.io/v2beta2
 kind: HelmRelease
 metadata:
@@ -22,8 +23,6 @@ spec:
       retries: 6
   uninstall:
     keepHistory: false
-  externalIPs:
-    - 10.44.0.11
   values:
     fullnameOverride: k8s-gateway
     domain: "${SECRET_DOMAIN}"
