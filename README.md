@@ -1,5 +1,8 @@
 <div align="center">
 
+<img src="https://raw.githubusercontent.com/aegiru/kms/main/k8s.png" align="center" width="192px" height="144px"/>
+
+
 ### **kms**
 
 _**K**inda **M**ediocre **S**elf-hosting_
