@@ -27,7 +27,7 @@ The cluster is deployed on Debian 12 (bookworm) installations, using the generic
 
 ### Core Components
 
-- [cert-manager](https://github.com/cert-manager/cert-manager): Responsible SSL certificates for services within my cluster.
+- [cert-manager](https://github.com/cert-manager/cert-manager): Responsible for SSL certificates for services within my cluster.
 - [cilium](https://github.com/cilium/cilium): Internal Kubernetes container networking interface.
 - [cloudflared](https://github.com/cloudflare/cloudflared): Exposing certain ingresses through a Cloudflare tunnel.
 - [external-dns](https://github.com/kubernetes-sigs/external-dns): Syncing DNS records with a DNS provider.
@@ -63,4 +63,4 @@ Part of the reason why this set-up is (highly) mediocre from a self-hosted point
 
 ## 🤝 Gratitude and Thanks
 
-I'd like to thank [Techno Tim](https://github.com/timothystewart6), and his Discord community for help. His YouTube channel has been a great starting point and (together with [r/selhosted](https://www.reddit.com/r/selfhosted/)) has served as a goal to strive towards and a source of ~~jealousy~~ _motivation_. Huge thanks to [onedr0p](https://github.com/onedr0p) for the his repos, and the [Home Operations](https://discord.gg/home-operations) Discord community for withstanding my murderously boring and unexpected problems in regards to actually setting this thing up.
+I'd like to thank [Techno Tim](https://github.com/timothystewart6), and his Discord community for help. His YouTube channel has been a great starting point and (together with [r/selhosted](https://www.reddit.com/r/selfhosted/)) has served as a goal to strive towards and a source of ~~jealousy~~ _motivation_. Huge thanks to [onedr0p](https://github.com/onedr0p) for his repos, and the [Home Operations](https://discord.gg/home-operations) Discord community for withstanding my murderously boring and unexpected problems in regards to actually setting this thing up.
