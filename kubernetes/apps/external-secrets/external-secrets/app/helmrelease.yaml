@@ -25,7 +25,7 @@ spec:
     installCRDs: true
     image:
       repository: ghcr.io/skarlso/external-secrets
-      tag: v0.9.13-44.gb4208003
+      tag: v0.9.13-40.gc65a7cbd
     serviceMonitor:
       enabled: true
       interval: 1m
