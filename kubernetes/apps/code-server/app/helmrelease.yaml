@@ -72,7 +72,7 @@ spec:
         enabled: true
         existingClaim: "code-server-data"
         globalMounts:
-          - subPath: "code-server/data""
+          - subPath: "code-server/data"
             path: "/home/coder"
           - subPath: "code-server/ssh"
             path: "/home/coder/.ssh"
