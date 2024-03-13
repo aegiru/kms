@@ -25,3 +25,6 @@ spec:
   path: ./kubernetes/apps/pg/db
   dependsOn:
     - name: pg-app
+  prune: false
+  wait: false
+  interval: 30m
