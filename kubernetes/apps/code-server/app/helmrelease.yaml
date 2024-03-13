@@ -35,7 +35,7 @@ spec:
               repository: ghcr.io/coder/code-server
               tag: "4.22.0"
             args: [
-              "--auth", "password",
+              "--auth", "none",
               "--disable-telemetry",
               "--bind-addr", "0.0.0.0:8080",
               "--port", "8080"
