@@ -43,11 +43,6 @@ spec:
             env:
               TZ: "Europe/Amsterdam"
               SSH_AUTH_SOCK: ""
-            extraVolumeMounts:
-              - name: config
-                mountPath: /home/coder/.config/code-server
-              - name: main
-                mountPath: /home/coder/kms
     service:
       main:
         ports:
@@ -72,10 +67,12 @@ spec:
         tls:
           - hosts:
               - *host
-    extraVolumes:
-      - name: config
-        hostPath:
-          path: /home/debian/kms/etc/code-server
-      - name: main
-        hostPath:
-          path: /home/debian/kms
+    persistence:
+      config:
+        enabled: true
+        existingClaim: "code-server-data"
+        globalMounts:
+          - subPath: "code-server/data""
+            path: "/home/coder"
+          - subPath: "code-server/ssh"
+            path: "/home/coder/.ssh"
