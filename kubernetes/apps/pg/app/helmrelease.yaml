@@ -1,0 +1,19 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta2
+kind: HelmRelease
+metadata:
+  name: &app crunchy-pgo
+  namespace: postgres
+spec:
+  install:
+    crds: CreateReplace
+  upgrade:
+    crds: CreateReplace
+  chart:
+    spec:
+      chart: pgo
+      version: 5.5.0
+      sourceRef:
+        name: crunchydata
+        kind: HelmRepository
+        namespace: flux-system
