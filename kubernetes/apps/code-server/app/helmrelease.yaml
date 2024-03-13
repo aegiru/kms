@@ -38,6 +38,8 @@ spec:
               "--auth", "password",
               "--disable-telemetry",
               "--bind-addr", "0.0.0.0:8080",
+              "--user-data-dir", "/home/coder/.vscode",
+              "--extensions-dir", "/home/coder/.vscode",
               "--port", "8080"
             ]
             env:
