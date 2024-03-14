@@ -1,6 +1,6 @@
 ---
 apiVersion: postgres-operator.crunchydata.com/v1beta1
-kind: ghcr.io/cloudnative-pg/postgresql:16.0-4Cluster
+kind: PostgresCluster
 metadata:
   name: pg-data
   namespace: postgres
