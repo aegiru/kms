@@ -8,7 +8,7 @@ spec:
     storage: 150Gi
   volumeMode: Filesystem
   accessModes:
-    - ReadWriteOnce
+    - ReadWriteMany
   persistentVolumeReclaimPolicy: Delete
   storageClassName: local-storage
   local:

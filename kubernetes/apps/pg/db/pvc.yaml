@@ -6,7 +6,7 @@ metadata:
   namespace: "postgres"
 spec:
   storageClassName: "local-storage"
-  accessModes: ["ReadWriteOnce"]
+  accessModes: ["ReadWriteMany"]
   resources:
     requests:
       storage: 10Gi
