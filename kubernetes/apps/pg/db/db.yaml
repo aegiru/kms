@@ -7,21 +7,21 @@ metadata:
 spec:
   postgresVersion: 16
   instances:
-    - name: pg-data-1
+    - name: data
       metadata:
         labels:
           app: pg-data
       dataVolumeClaimSpec:
-        storageClassName: postgres-data
+        storageClassName: local-storage
         accessModes:
-          - ReadWriteOnce
+          - ReadWriteMany
         resources:
           requests:
             storage: 5Gi
       walVolumeClaimSpec:
-        storageClassName: postgres-data
+        storageClassName: local-storage
         accessModes:
-          - ReadWriteOnce
+          - ReadWriteMany
         resources:
           requests:
             storage: 5Gi
