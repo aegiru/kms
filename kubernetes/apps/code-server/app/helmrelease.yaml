@@ -72,7 +72,7 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: "code-server-data"
+        existingClaim: "code-server-data-1"
         globalMounts:
           - subPath: "code-server/data"
             path: "/home/coder"
