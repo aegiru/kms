@@ -6,6 +6,13 @@ metadata:
   namespace: vikunja
 spec:
   interval: 15m
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    cleanupOnFail: true
+    remediation:
+      retries: 3
   chart:
     spec:
       chart: app-template
