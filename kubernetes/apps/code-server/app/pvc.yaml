@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: "code-server-data"
+  name: "code-server-data-1"
   namespace: "code-server"
 spec:
   storageClassName: "local-storage"

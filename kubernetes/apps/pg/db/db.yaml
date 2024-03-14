@@ -7,7 +7,7 @@ metadata:
 spec:
   postgresVersion: 16
   instances:
-    - name: pg-data
+    - name: pg-data-1
       metadata:
         labels:
           app: pg-data
