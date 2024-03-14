@@ -32,15 +32,18 @@ spec:
         type: AlphaNumeric
   backups:
     pgbackrest:
-      repository:
-        configuration:
-          - secret:
-              name: postgres-backup-secret
-              key: secret
-        gcs:
-          bucket: aegiru-postgres
-          path: pg-data
-          storageType: gcs
-          verifyPgBackrest: true
-      schedule: "0 0 1,8,15,22 * *"
-      storageType: gcs
+      configuration:
+        - secret:
+            name: postgres-backup-secret
+            key: secret
+      global:
+        archive-push-queue-max: 4GiB
+        repo1-retention-full: "2"
+        repo1-path: "/pg/repo1"
+      repos:
+        - name: repo1
+          schedules:
+            full: "0 0 1,7,8,15 * *"
+            differential: "0 0 1,7,8,15 * *"
+          gcs:
+            bucket: aegiru-postgres
