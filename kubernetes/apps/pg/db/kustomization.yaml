@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - ./db.yaml
   - ./superuser.secret.yaml
+  - ./backup.secret.yaml
