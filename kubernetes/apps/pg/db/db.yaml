@@ -30,4 +30,17 @@ spec:
         - vikunja
       password:
         type: AlphaNumeric
-    
+  backups:
+    pgbackrest:
+      repository:
+        configuration:
+          - secret:
+              name: postgres-backup-secret
+              key: secret
+        gcs:
+          bucket: aegiru-postgres
+          path: pg-data
+          storageType: gcs
+          verifyPgBackrest: true
+      schedule: "0 0 1,8,15,22 * *"
+      storageType: gcs
