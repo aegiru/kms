@@ -1,23 +1,33 @@
 ---
-apiVersion: postgresql.cnpg.io/v1
-kind: Cluster
+apiVersion: postgres-operator.crunchydata.com/v1beta1
+kind: ghcr.io/cloudnative-pg/postgresql:16.0-4Cluster
 metadata:
   name: pg-data
   namespace: postgres
 spec:
-  instances: 1
-  imageName: ghcr.io/cloudnative-pg/postgresql:16.0-4
-  primaryUpdateStrategy: unsupervised
-  primaryUpdateMethod: restart
-  storage:
-    size: 5Gi
-    storageClass: local-storage
-  superUserSecret:
-    name: postgres-superuser
-  postgresql:
-    parameters:
-      max_connections: "600"
-      shared_buffers: "256MB"
-  monitoring:
-    enablePodMonitor: true
+  postgresVersion: 16
+  instances:
+    - name: pg-data
+      metadata:
+        labels:
+          app: pg-data
+      dataVolumeClaimSpec:
+        storageClassName: local-storage
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi
+  users:
+    - name: postgres
+      databases:
+        - postgres
+      options: "SUPERUSER"
+      password:
+        type: AlphaNumeric
+    - name: vikunja
+      databases:
+        - vikunja
+      password:
+        type: AlphaNumeric
     
