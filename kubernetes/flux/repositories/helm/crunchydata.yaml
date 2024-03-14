@@ -5,7 +5,7 @@ metadata:
   name: crunchydata
   namespace: flux-system
 spec:
-  interval: 1h0s
+  interval: 10m
   timeout: 3m0s
   type: oci
   url: oci://registry.developers.crunchydata.com/crunchydata
