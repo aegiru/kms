@@ -56,9 +56,9 @@ spec:
                     name: pg-data-pguser-vikunja
                     key: dbname
             volumeMounts:
-              - name: files
-                globalMounts:
-                  - path: /app/vikunja/files
+              # - name: files
+              #   globalMounts:
+              #     - path: /app/vikunja/files
               - name: config
                 globalMounts:
                   - path: /app/vikunja/config.yaml

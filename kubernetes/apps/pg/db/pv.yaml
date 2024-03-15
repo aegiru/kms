@@ -1,30 +1,18 @@
 ---
 apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: "code-server-volume-claim"
-  namespace: "code-server"
-spec:
-  storageClassName: "code-server-class"
-  accessModes: ["ReadWriteOnce"]
-  resources:
-    requests:
-      storage: 10Gi
----
-apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: code-server-volume
+  name: postgres-volume
 spec:
   capacity:
-    storage: 10Gi
+    storage: 15Gi
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Delete
-  storageClassName: code-server-class
+  storageClassName: postgres-class
   local:
-    path: /home/debian/kms/data/code-server
+    path: /home/debian/kms/data/postgres
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -33,4 +21,3 @@ spec:
               operator: In
               values:
                 - bismarck
-

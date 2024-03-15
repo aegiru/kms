@@ -72,9 +72,9 @@ spec:
     persistence:
       config:
         enabled: true
-        existingClaim: "code-server-data-1"
+        existingClaim: "code-server-volume-claim"
         globalMounts:
-          - subPath: "code-server/data"
+          - subPath: "data"
             path: "/home/coder"
-          - subPath: "code-server/ssh"
+          - subPath: "ssh"
             path: "/home/coder/.ssh"

@@ -12,19 +12,12 @@ spec:
         labels:
           app: pg-data
       dataVolumeClaimSpec:
-        storageClassName: local-storage
+        storageClassName: postgres-class
         accessModes:
-          - ReadWriteMany
+          - ReadWriteOnce
         resources:
           requests:
-            storage: 5Gi
-      walVolumeClaimSpec:
-        storageClassName: local-storage
-        accessModes:
-          - ReadWriteMany
-        resources:
-          requests:
-            storage: 5Gi
+            storage: 15Gi
   users:
     - name: postgres
       databases:
