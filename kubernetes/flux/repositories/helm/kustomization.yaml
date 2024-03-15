@@ -6,6 +6,7 @@ resources:
   - ./cilium.yaml
   - ./cloudnative-pg.yaml
   - ./crunchydata.yaml
+  - ./emberstack.yaml
   - ./external-dns.yaml
   - ./external-secrets.yaml
   - ./ingress-nginx.yaml
