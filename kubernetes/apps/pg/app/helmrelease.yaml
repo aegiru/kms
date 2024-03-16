@@ -15,7 +15,7 @@ spec:
     spec:
       interval: 5m
       chart: pgo
-      version: 5.5.0
+      version: 5.5.1
       sourceRef:
         name: crunchydata
         kind: HelmRepository
