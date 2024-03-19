@@ -34,7 +34,8 @@ spec:
     dynamicConfiguration:
       postgresql:
         -pg_hba:
-          - host all all 10.0.0.0/24 trust
+          - hostnossl all all 10.42.0.0/16 md5
+          - hostssl all all all md5
   backups:
     pgbackrest:
       configuration:
@@ -44,6 +45,7 @@ spec:
         archive-push-queue-max: 4GiB
         repo1-retention-full: "2"
         repo1-path: "/pg/repo1"
+        repo1-gcs-key: postgres-backup-secret
       repos:
         - name: repo1
           schedules:
