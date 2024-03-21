@@ -32,20 +32,23 @@ spec:
         type: AlphaNumeric
   patroni:
     dynamicConfiguration:
+      synchronous_mode: true
       postgresql:
-        -pg_hba:
-          - hostnossl all all 10.42.0.0/16 md5
-          - hostssl all all all md5
+        synchronous_commit: "on"
+        pg_hba:
+          #- hostnossl all all 10.42.0.0/16 md5
+          #- hostssl all all all md5
+          - host all all 0.0.0.0/0 md5
   backups:
     pgbackrest:
       configuration:
         - secret:
             name: postgres-backup-secret
       global:
-        #archive-push-queue-max: 4GiB
-        #repo1-retention-full: "2"
+        archive-push-queue-max: 4GiB
+        repo1-retention-full: "2"
         repo1-path: "/pgbackrest/crunchy-pgo/pg-data/repo1"
-        #repo1-gcs-key: postgres-backup-secret
+        repo1-gcs-key: postgres-backup-secret
       repos:
         - name: repo1
           schedules:
