@@ -83,6 +83,10 @@ spec:
                 memory: 35M
               limits:
                 memory: 35M
+          proxy:
+            image:
+              repository: caddy
+              tag: 2.7.6-alpine
     service:
       main:
         ports:
@@ -105,6 +109,13 @@ spec:
           - hosts:
               - *host
     persistence:
+      caddy-config:
+        enabled: true
+        type: configMap
+        name: vikunja
+        globalMounts:
+          - path: /etc/caddy/Caddyfile
+            subPath: Caddyfile
       vikunja-config:
         enabled: true
         type: configMap
