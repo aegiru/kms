@@ -30,7 +30,6 @@ spec:
         - vikunja
       password:
         type: AlphaNumeric
-      options: "SUPERUSER"
   patroni:
     dynamicConfiguration:
       synchronous_mode: true
